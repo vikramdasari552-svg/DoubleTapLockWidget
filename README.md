@@ -1,21 +1,23 @@
-# Double Tap Lock Widget
+# Double Tap Lock Widget 2.0
 
-A transparent, resizable Android home-screen widget. Double tap inside its area to lock the screen.
+A transparent, resizable Pixel Launcher widget that provides tap-sequence actions without a full-screen overlay.
 
-## Why a widget
+## Actions
 
-A widget does not install a full-screen touch overlay. It therefore does not freeze Recents, the app drawer, app shortcuts, or other applications. Only the space occupied by the widget is reserved for double-tap detection.
+- Double tap: lock the screen
+- Triple tap: toggle the flashlight
+- Optional four taps: Recent apps, Notifications, or Quick Settings
+- Configurable maximum gap between taps
+- Configurable delay before the double-tap action
+- Optional haptic feedback
 
 ## Setup
 
 1. Install the APK.
-2. Open the app and enable **Double Tap Lock Service** in Accessibility settings.
-3. Long-press an empty area of the Pixel Launcher home screen.
-4. Choose **Widgets**.
-5. Find **Double Tap Lock Widget**.
-6. Add it and resize it over the empty home-screen space.
-7. Double tap inside that transparent area to lock.
+2. Open the app and enable the accessibility service.
+3. Allow Camera permission for flashlight control.
+4. Long-press an empty home-screen area, choose Widgets, add Double Tap Lock Widget, and resize it over empty cells.
 
-## Limitations
+## Limitation
 
-Android widgets do not receive raw touch streams. Each widget tap launches a transparent no-history activity, which records the tap time. Two taps within 450 ms trigger the accessibility lock action. Single taps inside the widget area are consumed by the widget and will not interact with wallpaper or icons underneath.
+Android home-screen widgets use `RemoteViews`, so they receive click actions but not arbitrary raw multi-touch or swipe listeners. Two-finger swipe gestures are therefore not implemented. The widget does not use an overlay and cannot freeze Recents or the app drawer.

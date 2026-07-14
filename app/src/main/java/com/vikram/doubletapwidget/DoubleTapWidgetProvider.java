@@ -12,9 +12,9 @@ public final class DoubleTapWidgetProvider extends AppWidgetProvider {
     public void onUpdate(Context context, AppWidgetManager manager, int[] appWidgetIds) {
         for (int appWidgetId : appWidgetIds) {
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_double_tap);
-            Intent tapIntent = new Intent(context, TapActivity.class)
-                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            PendingIntent pendingIntent = PendingIntent.getActivity(
+            Intent tapIntent = new Intent(context, TapReceiver.class)
+                    .setAction(TapReceiver.ACTION_WIDGET_TAP);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(
                     context,
                     appWidgetId,
                     tapIntent,

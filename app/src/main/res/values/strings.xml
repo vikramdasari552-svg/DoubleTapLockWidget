@@ -1,5 +1,3 @@
 <resources>
     <string name="app_name">Double Tap Lock Widget</string>
-    <string name="widget_description">Transparent resizable home-screen area. Double tap it to lock.</string>
-    <string name="accessibility_description">Locks the screen only when the widget detects a double tap.</string>
 </resources>

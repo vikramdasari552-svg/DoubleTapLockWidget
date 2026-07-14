@@ -14,15 +14,8 @@ public final class LockAccessibilityService extends AccessibilityService {
         instance = new WeakReference<>(this);
     }
 
-    @Override
-    public void onAccessibilityEvent(AccessibilityEvent event) {
-        // No global event processing. The service exists only to perform the lock action.
-    }
-
-    @Override
-    public void onInterrupt() {
-        // Nothing to interrupt.
-    }
+    @Override public void onAccessibilityEvent(AccessibilityEvent event) {}
+    @Override public void onInterrupt() {}
 
     @Override
     public void onDestroy() {
@@ -31,7 +24,11 @@ public final class LockAccessibilityService extends AccessibilityService {
     }
 
     public static boolean lockScreen() {
+        return performAction(GLOBAL_ACTION_LOCK_SCREEN);
+    }
+
+    public static boolean performAction(int action) {
         LockAccessibilityService service = instance.get();
-        return service != null && service.performGlobalAction(GLOBAL_ACTION_LOCK_SCREEN);
+        return service != null && service.performGlobalAction(action);
     }
 }
