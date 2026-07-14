@@ -1,14 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Double Tap Lock Widget</string>
+    <string name="service_name">Double Tap Lock Service</string>
+    <string name="accessibility_description">Allows the widget to lock the screen and open selected system panels.</string>
+    <string name="widget_description">Transparent resizable widget with configurable multi-tap actions.</string>
+    <string name="widget_area_label">Gesture area</string>
+    <string name="widget_setup_help">Long-press an empty home-screen area, choose Widgets, add Double Tap Lock Widget, then resize it over empty cells.</string>
+    <string name="enable_service_first">Enable Double Tap Lock Service first</string>
+    <string name="allow_camera_first">Allow Camera permission for flashlight control</string>
+    <string name="no_flashlight">No flashlight was found</string>
+    <string name="flashlight_on">Flashlight on</string>
+    <string name="flashlight_off">Flashlight off</string>
+    <string name="flashlight_unavailable">Flashlight is temporarily unavailable</string>
+    <string name="flashlight_permission_enabled">Flashlight permission enabled</string>
+    <string name="flashlight_permission_denied">Flashlight permission denied</string>
+    <string name="status_enabled">Enabled</string>
+    <string name="status_disabled">Disabled</string>
+    <string name="status_granted">Granted</string>
+    <string name="status_not_granted">Not granted</string>
+    <string name="ms_value">%1$d ms</string>
+    <string name="action_count_value">Successful actions: %1$d</string>
 
-    <string name="accessibility_description">
-        Allows Double Tap Lock Widget to lock the screen and perform configured actions.
-    </string>
+    <string-array name="gesture_actions">
+        <item>Disabled</item>
+        <item>Lock screen</item>
+        <item>Toggle flashlight</item>
+        <item>Recent apps</item>
+        <item>Notifications</item>
+        <item>Quick Settings</item>
+    </string-array>
 
-    <string name="widget_description">
-        Transparent widget that detects double and triple taps.
-    </string>
-
+    <string-array name="timing_presets">
+        <item>Choose a preset</item>
+        <item>Fast</item>
+        <item>Balanced</item>
+        <item>Relaxed</item>
+    </string-array>
 </resources>

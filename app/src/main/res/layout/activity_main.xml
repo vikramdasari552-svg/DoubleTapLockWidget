@@ -9,11 +9,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="20dp">
 
         <ImageView
-            android:layout_width="88dp"
-            android:layout_height="88dp"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
             android:layout_gravity="center_horizontal"
             android:contentDescription="@string/app_name"
             android:src="@mipmap/ic_launcher" />
@@ -21,129 +21,292 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="14dp"
             android:gravity="center"
-            android:text="Double Tap Lock Widget"
+            android:text="@string/app_name"
             android:textColor="@color/on_surface"
-            android:textSize="26sp"
+            android:textSize="27sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="6dp"
             android:gravity="center"
             android:text="Transparent home-screen gesture area"
-            android:textColor="@color/on_surface"
+            android:textColor="@color/on_surface_variant"
             android:textSize="15sp" />
 
-        <Button
-            android:id="@+id/openAccessibility"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Enable lock and system actions" />
-
-        <Button
-            android:id="@+id/cameraPermission"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Allow flashlight control" />
-
-        <Button
-            android:id="@+id/openWidgets"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="How to add the widget" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:text="Tap timing"
-            android:textColor="@color/on_surface"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:text="Maximum gap between taps"
-            android:textColor="@color/on_surface"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tapIntervalValue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/on_surface"
-            android:textSize="14sp" />
-
-        <SeekBar
-            android:id="@+id/tapInterval"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Wait after the second tap for a possible third tap"
-            android:textColor="@color/on_surface"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/doubleDelayValue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/on_surface"
-            android:textSize="14sp" />
-
-        <SeekBar
-            android:id="@+id/doubleDelay"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <CheckBox
-            android:id="@+id/enableTripleTap"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:text="Triple tap toggles flashlight"
-            android:textColor="@color/on_surface" />
-
-        <CheckBox
-            android:id="@+id/enableHaptic"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Vibrate after a successful action"
-            android:textColor="@color/on_surface" />
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="22dp"
-            android:text="Optional four-tap action"
-            android:textColor="@color/on_surface"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:background="@drawable/card_background"
+            android:orientation="vertical">
 
-        <Spinner
-            android:id="@+id/fourTapAction"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Setup status"
+                android:textColor="@color/on_surface"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Accessibility service"
+                android:textColor="@color/on_surface_variant" />
+
+            <TextView
+                android:id="@+id/serviceStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/on_surface"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Flashlight permission"
+                android:textColor="@color/on_surface_variant" />
+
+            <TextView
+                android:id="@+id/cameraStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/on_surface"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/openAccessibility"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Open accessibility settings" />
+
+            <Button
+                android:id="@+id/cameraPermission"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Allow flashlight control" />
+
+            <Button
+                android:id="@+id/openWidgets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="How to add the widget" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp" />
+            android:layout_marginTop="14dp"
+            android:background="@drawable/card_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gesture actions"
+                android:textColor="@color/on_surface"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Double tap"
+                android:textColor="@color/on_surface_variant" />
+            <Spinner
+                android:id="@+id/doubleTapAction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Triple tap"
+                android:textColor="@color/on_surface_variant" />
+            <Spinner
+                android:id="@+id/tripleTapAction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Four taps"
+                android:textColor="@color/on_surface_variant" />
+            <Spinner
+                android:id="@+id/fourTapAction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/card_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Timing"
+                android:textColor="@color/on_surface"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/timingPreset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Maximum gap between taps"
+                android:textColor="@color/on_surface_variant" />
+            <TextView
+                android:id="@+id/tapIntervalValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/on_surface"
+                android:textStyle="bold" />
+            <SeekBar
+                android:id="@+id/tapInterval"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Wait before deciding the tap sequence"
+                android:textColor="@color/on_surface_variant" />
+            <TextView
+                android:id="@+id/actionDelayValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/on_surface"
+                android:textStyle="bold" />
+            <SeekBar
+                android:id="@+id/actionDelay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/card_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Feedback and appearance"
+                android:textColor="@color/on_surface"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/enableHaptic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Vibrate after a successful action"
+                android:textColor="@color/on_surface" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Vibration duration"
+                android:textColor="@color/on_surface_variant" />
+            <TextView
+                android:id="@+id/hapticDurationValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/on_surface"
+                android:textStyle="bold" />
+            <SeekBar
+                android:id="@+id/hapticDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/testHaptic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Test vibration" />
+
+            <CheckBox
+                android:id="@+id/showWidgetArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Show the widget area while positioning"
+                android:textColor="@color/on_surface" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/card_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Diagnostics"
+                android:textColor="@color/on_surface"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/actionCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/on_surface_variant" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="The widget receives click events only. It never draws over Recents, the app drawer, shortcut menus, or other applications."
+                android:textColor="@color/on_surface_variant" />
+
+            <Button
+                android:id="@+id/resetDefaults"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Reset all settings" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:text="Gestures\n\n• Double tap: lock screen\n• Triple tap: flashlight on/off\n• Four taps: selected system action\n\nThe widget uses only its own home-screen cells. It does not place an overlay over Recents, the app drawer, shortcuts, or other apps. Arbitrary swipes and two-finger gestures are not available to Android RemoteViews widgets."
-            android:textColor="@color/on_surface"
-            android:textSize="15sp" />
-
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="Phase 1 stabilized · Phase 2 settings redesign"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="13sp" />
     </LinearLayout>
 </ScrollView>
